@@ -13,7 +13,8 @@ COPY prepare_production.sh /prepare_production
 # Install frappe
 RUN /install_frappe ${FRAPPE_BRANCH} && \
   # Install erpnext
-  /install_erpnext && \
+  ###/install_erpnext && \
+  /install_app erpnext https://github.com/Shakila-Sahira/ERPNext-Customization && \
   # Install required apps with following command
   # /install_app <app_name> <repo> <app_branch>
   /install_app metabase_integration https://github.com/${GITHUB_OWNER}/ERPNext-Metabase-Integration master && \
@@ -22,7 +23,7 @@ RUN /install_frappe ${FRAPPE_BRANCH} && \
   /install_app sql_accounting_software https://github.com/${GITHUB_OWNER}/ERPNext-SQL-Accounting-Integration main && \
   /install_app barcode_shrdc https://github.com/${GITHUB_OWNER}/ERPNext-Barcode-Integration master && \
   /install_app autocount https://github.com/${GITHUB_OWNER}/ERPNext-Autocount-Integration master && \
-  /install_app short_courses https://github.com/Shakila-Sahira/ERPNext-Short-Courses && \
+  /install_app short_courses https://github.com/Shakila-Sahira/Short-Courses && \
   /prepare_production
 
 FROM frappe/erpnext-nginx:${FRAPPE_BRANCH}
