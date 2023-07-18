@@ -106,7 +106,7 @@ In order to utilise the full integration between ERPNext and Frepple, you will n
     - `git clone https://github.com/msf4-0/short-courses`
 
 2. Navigate to the cloned folder.
-    - `cd IRPS-SQL_Accounting-Autocount-frepple`
+    - `cd short-courses`
 
 3. In `enx-example`, you can change the variables that would be used in this installation process to your preference such as the following:
     - Server port to host ERPNext,`ERPNEXT_SERVER_PORT`. Default is `8000`.
